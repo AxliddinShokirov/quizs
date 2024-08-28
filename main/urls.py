@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
     path('create-question/<int:id>/', views.questionCreate, name='questionCreate'),
     path('options-list/', views.optionList, name='optionsList'),
     path('optionDelete/<int:id>/', views.optionDelete, name='optionDelete'),
+    path('login/', include('main.login.urls')),
 ]

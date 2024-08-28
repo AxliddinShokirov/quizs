@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from . import models
 from random import choice, sample
 
@@ -69,4 +70,9 @@ def optionDelete(request, id):
     option = models.Option.objects.get(id=id)
     option.delete()
     return redirect('optionsList')
+
+
+
+
+        
 
